@@ -1,0 +1,15 @@
+# Credentials and secrets
+*.key
+*.pem
+secrets.md
+credentials.md
+
+# VM exports and large binaries
+*.ova
+*.ovf
+*.vmdk
+*.iso
+
+# OS junk
+Thumbs.db
+.DS_Store
