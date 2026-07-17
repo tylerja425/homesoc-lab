@@ -154,9 +154,53 @@ attach the new virtual hardware.
 _Status: package installed and enabled; service start pending a full VM
 restart after the main Security Onion install completes._
 
+## Install completion and a false-alarm error
+
+The Salt-driven install itself completed cleanly: 1667 states run, 1667
+succeeded, 0 failed. A final verification step then threw:
+
+```
+Error: Connection activation failed: Unknown error
+```
+
+This looked alarming (Security Onion's own setup wizard reports "Install
+had a problem" and points to `/root/sosetup.log` / `/root/errors.log`),
+but the actual install log showed the failure happened *after* all 1667
+states had already succeeded — it was a verification/network-check step,
+not part of the real configuration work. Likely cause: a brief network
+interruption during a ~30 minute window the host was unattended.
+
+Confirmed the install was actually fine by running:
+
+```
+sudo so-status
+```
+
+All core services (Elasticsearch, Kibana, Zeek, Suricata, Strelka,
+Logstash, Redis, etc.) reported `running`, several explicitly `healthy`.
+Security Onion's own status check gave its standard all-clear message.
+
+**Lesson for next time:** an error at the very end of `sosetup` doesn't
+necessarily mean the install failed — check `so-status` and the tail of
+`sosetup.log` before assuming a reinstall is needed.
+
+## First login confirmed
+
+Logged into the web console at `https://192.168.8.12` using the admin
+account created during setup. Browser flagged the self-signed certificate
+(expected and fine for a home lab); proceeded past the warning. Dashboard
+loaded successfully.
+
 ## Status
 
-Install in progress as of this writing. This document will be updated
-with final verification steps (web console login, confirming the sniffing
-interface is receiving traffic, confirming the guest agent shows the VM's
-IP in Proxmox) once the install finishes.
+Core install complete and verified working: all services running/healthy
+per `so-status`, web console reachable and login confirmed. 
+
+Remaining follow-up items (not yet done):
+- Confirm the sniffing interface (`ens19` / `vmbr1`) is actually receiving
+  and analyzing traffic (needs at least one other VM on `vmbr1` generating
+  traffic to test against)
+- Restart the VM to let the QEMU Guest Agent start cleanly (see above —
+  installed and enabled, but blocked on a Proxmox-side device that only
+  appears after a full VM restart)
+- Set up SSH key authentication (currently using password auth)
