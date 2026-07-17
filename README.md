@@ -26,7 +26,9 @@ See `docs/` for full setup details as each piece comes online.
 
 ## Status
 
-Just getting started. Proxmox server is set up; Security Onion install in progress.
+Security Onion (Standalone) is installed on Proxmox and verified working: all core services running, web console reachable, SSH key authentication set up. See `docs/security-onion-install.md` for the full build writeup and `journal/` for the day-to-day log.
+
+Next up: adding a second VM to generate test traffic and confirm the sniffing interface is capturing and analyzing it, then starting CySA+-aligned lab exercises.
 
 ## Disclaimer
 
