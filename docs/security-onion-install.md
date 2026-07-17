@@ -196,11 +196,20 @@ loaded successfully.
 Core install complete and verified working: all services running/healthy
 per `so-status`, web console reachable and login confirmed. 
 
+QEMU Guest Agent: confirmed working after a VM restart (`systemctl
+status qemu-guest-agent` shows `active (running)`; Proxmox now shows the
+VM's IP directly in its UI).
+
+SSH key authentication: set up and confirmed working. ED25519 keypair,
+passphrase-protected, managed via KeePassXC's SSH Agent feature (OpenSSH
+mode). See `journal/2026-07.md` for the full troubleshooting story —
+two real mistakes along the way (disabling the wrong Windows service,
+and not actually copying the public key to the server before assuming
+it was there) worth reading if setting this up again on another host.
+
 Remaining follow-up items (not yet done):
 - Confirm the sniffing interface (`ens19` / `vmbr1`) is actually receiving
   and analyzing traffic (needs at least one other VM on `vmbr1` generating
   traffic to test against)
-- Restart the VM to let the QEMU Guest Agent start cleanly (see above —
-  installed and enabled, but blocked on a Proxmox-side device that only
-  appears after a full VM restart)
-- Set up SSH key authentication (currently using password auth)
+- Consider disabling SSH password auth entirely now that key auth is
+  confirmed working (optional hardening step)
