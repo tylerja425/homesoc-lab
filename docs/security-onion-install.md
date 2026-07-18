@@ -207,9 +207,18 @@ two real mistakes along the way (disabling the wrong Windows service,
 and not actually copying the public key to the server before assuming
 it was there) worth reading if setting this up again on another host.
 
-Remaining follow-up items (not yet done):
-- Confirm the sniffing interface (`ens19` / `vmbr1`) is actually receiving
-  and analyzing traffic (needs at least one other VM on `vmbr1` generating
-  traffic to test against)
-- Consider disabling SSH password auth entirely now that key auth is
-  confirmed working (optional hardening step)
+**Sniffing interface: confirmed working.** Kali (attacker) and
+Metasploitable (target) VMs were added on `vmbr1`, and the monitor
+interface's traffic capture and analysis pipeline was fully verified end
+to end — real Zeek connection logs and a genuine Suricata alert ("ET SCAN
+Suspicious inbound to PostgreSQL port 5432") were generated and confirmed
+visible in Security Onion's Hunt page. Getting to that point took
+resolving three separate, stacked issues (search technique, MTU/bond
+activation, and Linux bridge mirroring fundamentals) — full story in
+`docs/lab-network-topology.md` and `docs/troubleshooting-detection-pipeline.md`.
+
+No remaining follow-up items — SSH password authentication has been
+disabled on this host (and on Kali and the Proxmox host itself), leaving
+key-based auth as the only way in. See `journal/2026-07.md` (2026-07-18
+entry) for the full process, including a real `vi` mishap and recovery
+worth reading if doing this again on another host.
