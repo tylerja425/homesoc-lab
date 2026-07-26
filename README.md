@@ -13,10 +13,13 @@ Build practical, documented experience with SOC tooling (SIEM, log analysis, det
 ## Lab environment
 
 - Hypervisor: Proxmox VE
-- SIEM / NSM platform: Security Onion
-- Additional VMs: TBD as the network topology is built out
+- SIEM / NSM platform: Security Onion (Standalone)
+- Attacker VM: Kali Linux
+- Target VM: Metasploitable2
+- Vulnerability scanner: Greenbone Community Edition (OpenVAS)
+- Isolated lab network (`10.10.10.0/24`), separate from the home network, with traffic mirrored to Security Onion for full visibility
 
-See `docs/` for full setup details as each piece comes online.
+See `docs/` for full setup details.
 
 ## Repo structure
 
@@ -26,9 +29,13 @@ See `docs/` for full setup details as each piece comes online.
 
 ## Status
 
-Security Onion (Standalone) is installed on Proxmox and verified working: all core services running, web console reachable, SSH key authentication set up. See `docs/security-onion-install.md` for the full build writeup and `journal/` for the day-to-day log.
+Security Onion (Standalone) is installed on Proxmox and verified working. An isolated lab network (`10.10.10.0/24`) hosts a Kali attacker VM and a Metasploitable2 target VM, with traffic mirrored to Security Onion using Linux `tc` rules and a Proxmox hookscript that survives both VM restarts and full host reboots. The full detection pipeline has been verified end to end: a real `nmap` scan generated genuine Zeek connection logs and a correctly triaged Suricata alert. See `docs/security-onion-install.md`, `docs/lab-network-topology.md`, and `docs/troubleshooting-detection-pipeline.md` for the full build and debugging writeups.
 
-Next up: adding a second VM to generate test traffic and confirm the sniffing interface is capturing and analyzing it, then starting CySA+-aligned lab exercises.
+A vulnerability scanner (Greenbone Community Edition / OpenVAS) has since been added, scanning Metasploitable and returning real findings (66 findings, 118 CVEs on the first pass). One finding, a known vsftpd backdoor, was manually exploited via Metasploit and confirmed detected in Security Onion, completing a full scan to exploit to detection loop. See `journal/` for the day by day account.
+
+SSH password authentication has been disabled across all lab hosts; key based auth only.
+
+Next up: continuing CySA+-aligned detection exercises, and extending the shared lab so a second person can run their own attacker/target VMs against the same shared Security Onion instance.
 
 ## Disclaimer
 
