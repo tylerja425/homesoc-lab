@@ -2,6 +2,8 @@
 
 A hands on home lab for learning SOC analyst and blue team skills, built while studying for CompTIA CySA+ (CS0-004). This repo documents the build process, study notes, and day to day progress, all in one place.
 
+AI assistants should begin with [`AI_CONTEXT.md`](AI_CONTEXT.md). This is a public-safe subset of Tyler's broader Home Server context, not a complete private infrastructure inventory.
+
 ## Who's working on this
 
 Tyler Jackson (IT Support Specialist, currently Security+/Network+/A+ certified) and my brother, studying together toward CySA+.
