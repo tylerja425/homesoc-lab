@@ -1,5 +1,8 @@
 # AI Context — Home SOC Lab
 
+- **Public-source guide compatibility:** 1.4
+- **Repository visibility:** Public
+
 ## Purpose
 
 Help an AI use this public repository as the authoritative public-safe record of Tyler's Home SOC lab build, study work, detection exercises, and portfolio documentation.
