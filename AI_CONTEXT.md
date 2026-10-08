@@ -1,56 +1,38 @@
 # AI Context — Home SOC Lab
 
-- **Public-source guide compatibility:** 1.4
-- **Repository visibility:** Public
-
-## Purpose
-
-Help an AI use this public repository as the authoritative public-safe record of Tyler's Home SOC lab build, study work, detection exercises, and portfolio documentation.
-
-This repository is a relevant supporting source for broader Home Server conversations, but it is not a complete inventory of Tyler's server, network, services, access methods, or private operational context.
+This public repository is the authoritative public-safe record of Tyler's home SOC lab: the build, detection exercises and portfolio writeups. It is not a complete record of the server, network or services behind the lab.
 
 ## Reading order
 
-1. Read `README.md` for scope and current public status.
-2. Load only the relevant file under `docs/`.
-3. Use `journal/` for dated build history or troubleshooting evidence.
-4. Use `notes/` for study material when the question concerns learning or certification work.
+1. `README.md` for scope and current status.
+2. Only the relevant file in `docs/`.
+3. `journal/` for dated build history and troubleshooting evidence.
 
-Do not load the entire repository by default.
+Don't load the whole repository by default.
 
 ## Source authority
 
-- Current files under `docs/` are authoritative for the public-safe setup they describe.
-- `README.md` is a compact public overview.
-- `journal/` is dated evidence and history, not automatically current truth.
-- `notes/` contains learning material, not necessarily operational state.
-- Private Home Server context may contain additional current information. Absence from this public repository does not mean a system, service, decision, or issue does not exist.
+- `docs/` is authoritative for the setup it describes; `README.md` is the overview.
+- `journal/` is dated evidence, not automatically current truth.
+- Tyler's private Home Server context may hold newer or fuller information. Absence here doesn't mean a system, service, decision or issue doesn't exist. When the two conflict, show the conflict rather than choosing silently.
 
-When this repository conflicts with newer authorized private context, show the conflict rather than silently choosing one.
+## Shared lab
 
-## Context-loaded requests
+Tyler's brother uses the lab too. They share Security Onion, the Metasploitable2 target and the Greenbone scanner, and each runs his own other VMs. This repository documents Tyler's build and the shared parts; his brother's own VMs and notes stay in his own records.
 
-Once this guide and the relevant repository files are loaded, accept short natural requests such as “use my Home SOC lab context,” “what did I configure for Security Onion?”, or “update the public lab documentation.” Do not require a repeated repository path or long launcher.
+## Changes
 
-A request to discuss or inspect context does not authorize a repository change. Modify files only when the user explicitly asks.
+Reading or discussing this repository doesn't authorize a change. Change files only when Tyler asks: show the exact files and what changes in each, make one commit after he approves, then read it back.
 
 ## Public boundary
 
-Everything committed here is public and durable.
+Everything committed here is public and durable. Never add:
 
-Never add:
-
-- Passwords, tokens, private keys, recovery material, or credential contents
+- Passwords, tokens, private keys, recovery material or credential contents
 - SSH key values or secret-bearing commands
 - Public-facing access details that create unnecessary exposure
-- Private personal, household, employer, customer, student, or staff information
+- Private personal, household, employer, customer, student or staff information
 - A complete private server or network inventory merely for AI convenience
-- Raw AI transcripts or private context packets
+- Raw AI transcripts or private context notes
 
-Keep public documentation useful and technically credible while minimizing operational exposure. Private context should be referenced through the authorized personal routing system rather than copied here.
-
-## Relationship to broader context
-
-For a Home SOC lab question, this repository may be the primary technical source. For a broader Home Server question, treat it as one relevant public source alongside the authorized private Home Server context selected by Tyler's personal context hub.
-
-Do not duplicate public documentation into a private context repository. The private repository should link to the relevant public files and store only private operational context, cross-system decisions, and information not appropriate here.
+Keep the documentation technically credible while minimizing operational exposure. Private context links to these public files rather than copying them, and nothing private is copied here.

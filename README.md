@@ -1,12 +1,10 @@
 # Home SOC Lab
 
-A hands on home lab for learning SOC analyst and blue team skills, built while studying for CompTIA CySA+ (CS0-004). This repo documents the build process, study notes, and day to day progress, all in one place.
-
-AI assistants should begin with [`AI_CONTEXT.md`](AI_CONTEXT.md). This is a public-safe subset of Tyler's broader Home Server context, not a complete private infrastructure inventory.
+A hands on home lab for learning SOC analyst and blue team skills, built while studying for CompTIA CySA+ (CS0-004). This repo documents the build process and day to day progress, all in one place. It is a public-safe record of the lab, not a complete inventory of the infrastructure behind it.
 
 ## Who's working on this
 
-Tyler Jackson (IT Support Specialist, currently Security+/Network+/A+ certified) and my brother, studying together toward CySA+.
+Tyler Jackson (IT Support Specialist; earned CompTIA Security+, Network+ and A+) and my brother, studying together toward CySA+. We share Security Onion, the Metasploitable2 target and the Greenbone scanner, and each run our own other VMs.
 
 ## Goal
 
@@ -26,7 +24,6 @@ See `docs/` for full setup details.
 ## Repo structure
 
 - `docs/` — Finished writeups of what's been built: setup guides, architecture, configuration decisions.
-- `notes/` — Study notes organized by CySA+ exam domain.
 - `journal/` — Dated, running log of work sessions: what was done, what broke, what was learned.
 
 ## Status
@@ -37,7 +34,7 @@ A vulnerability scanner (Greenbone Community Edition / OpenVAS) has since been a
 
 SSH password authentication has been disabled across all lab hosts; key based auth only.
 
-Next up: continuing CySA+-aligned detection exercises, and extending the shared lab so a second person can run their own attacker/target VMs against the same shared Security Onion instance.
+Next up: continuing CySA+-aligned detection exercises.
 
 ## Disclaimer
 
