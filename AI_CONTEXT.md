@@ -22,7 +22,11 @@ Tyler's brother uses the lab too. They share Security Onion, the Metasploitable2
 
 ## Changes
 
-Reading or discussing this repository doesn't authorize a change. Change files only when Tyler asks: show the exact files and what changes in each, make one commit after he approves, then read it back.
+Reading or discussing this repository doesn't authorize a change. Change files only when Tyler asks: show the exact files and what changes in each, make one commit after he approves, then read it back. Commit as `Tyler Jackson <305436031+tylerja425@users.noreply.github.com>`: GitHub blocks pushes that expose Tyler's private email, so never author with another address. Provider co-author trailers are fine.
+
+## Browser
+
+This repository's work needs no browser. If a task does, use only the Chrome profile Tyler names by the extension's device ID, never a default or numbered label. If it isn't connected, or none is named, ask him to pick the profile in Chrome first. Device IDs are never recorded here.
 
 ## Public boundary
 
