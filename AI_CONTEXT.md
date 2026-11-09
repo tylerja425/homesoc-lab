@@ -15,7 +15,7 @@ Don't load the whole repository by default.
 - `docs/` is authoritative for the setup it describes; `README.md` is the overview.
 - `journal/` is dated evidence, not automatically current truth.
 - Tyler's private Home Server context may hold newer or fuller information. Absence here doesn't mean a system, service, decision or issue doesn't exist. When the two conflict, show the conflict rather than choosing silently.
-- Never make up content. Anything that goes into this repository comes from a source Tyler gave or named, unless he asked you to write it. If the source is missing, leave a visible blank, say what's missing and ask; never fill the gap from memory or general knowledge. When you write something yourself, say plainly which parts are yours before it's saved.
+- Never make up content. Anything that goes into this repository comes from a source Tyler gave or named, unless he asked you to write it. If the source is missing, ask Tyler before typing anything in its place, even a blank or placeholder; leave a visible blank only when he can't be asked, and say where. Never fill the gap from memory or general knowledge. When you write something yourself, say plainly which parts are yours before it's saved.
 
 ## Shared lab
 
