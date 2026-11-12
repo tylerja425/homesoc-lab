@@ -39,5 +39,8 @@ Everything committed here is public and durable. Never add:
 - Private personal, household, employer, customer, student or staff information
 - A complete private server or network inventory merely for AI convenience
 - Raw AI transcripts or private context notes
+- Names, paths or links of Tyler's private repositories
+
+Private-range addresses for the lab and its management network are fine to publish (Tyler, 2026-11-10).
 
 Keep the documentation technically credible while minimizing operational exposure. Private context links to these public files rather than copying them, and nothing private is copied here.
